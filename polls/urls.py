@@ -1,6 +1,8 @@
+from rest_framework import routers
+from .api import PollViewSet
 from django.urls import path
 from . import views
 
-urlpatterns = {
-    path('', views.index, name='index')
-}
+router = routers.DefaultRouter()
+router.register('api/polls', PollViewSet, 'polls')
+urlpatterns = router.urls
