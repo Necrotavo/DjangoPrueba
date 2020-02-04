@@ -39,7 +39,7 @@ class Documento(models.Model):
 
 class TCUDato(models.Model):
     Profesor = models.CharField(max_length=30)
-    Nombre = models.CharField(max_length=30)
+    Nombre = models.CharField(max_length=100)
     Codigo = models.CharField(max_length=10, primary_key=True)
     Telefono = models.CharField(max_length=8)
     Correo = models.EmailField(max_length=30)
@@ -47,3 +47,8 @@ class TCUDato(models.Model):
     Facebook = models.CharField(max_length=100)
     Youtube = models.CharField(max_length=100)
 
+class Noticia(models.Model):
+    Descripcion = models.CharField(max_length=1000)
+    Titulo = models.CharField(max_length=100)
+    Imagen = models.CharField(max_length=200)
+    Identificacion = models.CharField(max_length=30, primary_key=True)

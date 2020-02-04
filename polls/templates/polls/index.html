@@ -1,0 +1,8 @@
+<h1>
+    {{ Datos_TCU.Codigo }}
+</h1>
+<h2>Nombre: {{ Datos_TCU.Nombre }}</h2> 
+<h3>ESTUDIANTES:</h3>
+{% for estudiante in Estudiantes %}
+<li><a href="{{ estudiante.Identificacion }}"> {{estudiante.Nombre}} {{estudiante.Primer_Apellido}} </a></li>
+{% endfor %}

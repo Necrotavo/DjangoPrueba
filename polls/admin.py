@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.models import Group
-from .models import Documento
+from .models import Documento, Noticia
 from .models import Estudiante
 from .models import TCUDato
 from .models import Proyecto
@@ -21,3 +21,4 @@ admin.site.register(Estudiante, EstudianteAdmin)
 admin.site.register(TCUDato, TCUDatoAdmin)
 admin.site.register(Proyecto)
 admin.site.unregister(Group)
+admin.site.register(Noticia)
