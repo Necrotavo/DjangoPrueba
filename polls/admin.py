@@ -10,6 +10,7 @@ admin.site.site_header = 'Administrador de TCU'
 
 class TCUDatoAdmin(admin.ModelAdmin):
     list_display = ('Codigo',)
+    exclude = ('Codigo',)
 
 class EstudianteAdmin(admin.ModelAdmin):
     list_display = ('Identificacion', 'Nombre', 'Primer_Apellido', 'Proyecto', 'Horas',)
@@ -21,4 +22,5 @@ admin.site.register(Estudiante, EstudianteAdmin)
 admin.site.register(TCUDato, TCUDatoAdmin)
 admin.site.register(Proyecto)
 admin.site.unregister(Group)
+
 admin.site.register(Noticia)

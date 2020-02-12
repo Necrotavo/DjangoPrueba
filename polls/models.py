@@ -21,9 +21,11 @@ class Estudiante(models.Model):
     Estado = models.CharField(max_length=30)
     Horas = models.IntegerField()
     Proyecto = models.ForeignKey(Proyecto, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.Nombre + " " + self.Primer_Apellido + " " + self.Segundo_Apellido
 
 class Documento(models.Model):
-    Nombre = models.CharField(max_length=30)
+    Nombre = models.CharField(max_length=150)
     Fecha = models.DateField(auto_now=True)
 
     TIPO_DOCUMENTO = [
@@ -36,6 +38,8 @@ class Documento(models.Model):
     Lugar = models.CharField(max_length=30)
     Proyecto = models.ForeignKey(Proyecto, on_delete=models.CASCADE)
     Enlace = models.CharField(max_length=100)
+    def __str__(self):
+        return self.Nombre
 
 class TCUDato(models.Model):
     Profesor = models.CharField(max_length=30)
@@ -46,9 +50,13 @@ class TCUDato(models.Model):
     Descripcion = models.CharField(max_length=500)
     Facebook = models.CharField(max_length=100)
     Youtube = models.CharField(max_length=100)
+    def __str__(self):
+        return self.Nombre
 
 class Noticia(models.Model):
     Descripcion = models.CharField(max_length=1000)
     Titulo = models.CharField(max_length=100)
-    Imagen = models.CharField(max_length=200)
+    Imagen = models.ImageField(upload_to='polls/images')
     Identificacion = models.CharField(max_length=30, primary_key=True)
+    def __str__(self):
+        return self.Titulo
