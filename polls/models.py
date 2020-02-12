@@ -33,7 +33,7 @@ class Documento(models.Model):
         ('ST','ESTUDIO'),
         ('ED','ESTADISTICA'),
     ]
-
+#prueba 
     Tipo = models.CharField(max_length=2,choices=TIPO_DOCUMENTO)
     Lugar = models.CharField(max_length=30)
     Proyecto = models.ForeignKey(Proyecto, on_delete=models.CASCADE)
