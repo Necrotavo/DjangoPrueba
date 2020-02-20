@@ -17,9 +17,14 @@ class EstudianteAdmin(admin.ModelAdmin):
     list_filter = ('Estado', 'Proyecto',)
 
 class ProyectoAdmin(admin.ModelAdmin):
+    list_display = ('Nombre','Inicio',)
     list_filter = ('Inicio',)
 
-admin.site.register(Documento)
+class DocumentoAdmin(admin.ModelAdmin):
+    list_display = ('Nombre','Fecha', 'Proyecto', 'Tipo')
+    list_filter = ('Tipo', 'Proyecto',)
+
+admin.site.register(Documento, DocumentoAdmin)
 admin.site.register(Estudiante, EstudianteAdmin)
 admin.site.register(Proyecto, ProyectoAdmin)
 admin.site.unregister(Group)
