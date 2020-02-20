@@ -3,7 +3,7 @@ from django.contrib.auth.models import Group, User
 from .models import Documento, Noticia
 from .models import Estudiante
 from .models import TCUDato
-from .models import Proyecto
+from .models import Proyecto, Pasantia
 
 # Register your models here.
 admin.site.site_header = 'Administrador de TCU'
@@ -13,13 +13,15 @@ class TCUDatoAdmin(admin.ModelAdmin):
     exclude = ('Codigo',)
 
 class EstudianteAdmin(admin.ModelAdmin):
-    list_display = ('Identificacion', 'Nombre', 'Primer_Apellido', 'Proyecto', 'Horas',)
-    list_filter = ('Proyecto',)
+    list_display = ('Identificacion', 'Nombre', 'Primer_Apellido', 'Proyecto',)
+    list_filter = ('Estado', 'Proyecto',)
 
+class ProyectoAdmin(admin.ModelAdmin):
+    list_filter = ('Inicio',)
 
 admin.site.register(Documento)
 admin.site.register(Estudiante, EstudianteAdmin)
-admin.site.register(Proyecto)
+admin.site.register(Proyecto, ProyectoAdmin)
 admin.site.unregister(Group)
-admin.site.unregister(User)
 admin.site.register(Noticia)
+admin.site.register(Pasantia)
