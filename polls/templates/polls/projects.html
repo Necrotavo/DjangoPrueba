@@ -1,0 +1,54 @@
+{% extends 'polls/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<body>
+    <div class="container">
+        <div class="row">
+           <div class="col-md-12">
+              <div class="titlepage">
+                 <h2>Proyectos</h2>
+              </div>
+           </div>
+        </div>
+        <div class="row">
+           <div class="col-md-12">
+              <div class="our_products">
+                 <div class="row">
+                    <div class="col-md-4 margin_bottom1">
+                       <div class="product_box" style="border: solid;">
+                          <figure><img src="{% static 'images/Proyecto.jpg'%}" alt="#"/></figure>
+                          <a>Nombre Proyecto</a> <br/>
+                          <a>Estado</a>
+                          <h3>Detalles</h3>
+                       </div>
+                    </div>
+                    <div class="col-md-4 margin_bottom1">
+                     <div class="product_box" style="border: solid;">
+                        <figure><img src="{% static 'images/Proyecto.jpg'%}" alt="#"/></figure>
+                        <a>Nombre Proyecto</a> <br/>
+                        <a>Estado</a>
+                        <h3>Detalles</h3>
+                     </div>
+                  </div>
+                  <div class="col-md-4 margin_bottom1">
+                     <div class="product_box" style="border: solid;">
+                        <figure><img src="{% static 'images/Proyecto.jpg'%}" alt="#"/></figure>
+                        <a>Nombre Proyecto</a> <br/>
+                        <a>Estado</a>
+                        <h3>Detalles</h3>
+                     </div>
+                  </div>
+                  <div class="col-md-12">
+                     <a class="read_more" href="#">Ver mas</a>
+                  </div>
+
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+  <!-- end products -->       
+</body>
+{% endblock %}

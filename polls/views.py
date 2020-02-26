@@ -13,7 +13,6 @@ def index(request):
     }
     return render(request, 'polls/index.html', context)
 
-
     
 def detalle_Estudiante(request, student_id):
     Estudiantes = Estudiante.objects.get(pk=student_id)
@@ -21,3 +20,19 @@ def detalle_Estudiante(request, student_id):
         'Estudiantes': Estudiantes,
     }
     return render(request, 'polls/detalle_Estudiante.html', context)
+
+def about(request):
+    context = { }
+    return render(request, 'polls/about.html', context)
+
+def files(request):
+    context = { }
+    return render(request, 'polls/files.html', context)
+
+def projects(request):
+    context = { }
+    return render(request, 'polls/projects.html', context)
+
+def news(request):
+    context = { }
+    return render(request, 'polls/news.html', context)

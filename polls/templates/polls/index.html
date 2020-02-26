@@ -1,39 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
-<body>
+﻿{% extends 'polls/base.html' %}
 
-<div class="jumbotron text-center">
-  <h1>My First Bootstrap Page</h1>
-  <p>Resize this responsive page to see the effect!</p> 
-</div>
-  
-<div class="container">
-  <div class="row">
-    <h1>
-        {{ Datos_TCU.Codigo }}
-    </h1>
-    <h2>Nombre: {{ Datos_TCU.Nombre }}</h2> 
-    <h3>ESTUDIANTES:</h3>
-    {% for estudiante in Estudiantes %}
-    <div class="col-sm-4">
-        <h3>Column 1</h3>
-        <li><a href="{{ estudiante.Identificacion }}"> {{estudiante.Nombre}} {{estudiante.Primer_Apellido}} </a></li>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-      </div>
+{% load static %}
+
+    {% block content %}
+    <section class="banner_main" >
+        <div class="col-md-6" >
     
-    {% endfor %}
-
-  </div>
-</div>
-
-</body>
-</html>
+        </div>
+        <div id="banner1" class="carousel slide" data-ride="carousel" style="background-color: rgba(0,0,0,0.4);">
+                <ol class="carousel-indicators">
+                    <li data-target="#banner1" data-slide-to="0" class="active" style="background-color: gray;"></li>
+                    <li data-target="#banner1" data-slide-to="1" ></li>
+                </ol>
+                <div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="container">
+                                <div class="carousel-caption">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="text-bg">
+                                                <span>Titulo noticia</span>
+                                                <p>Informacion sobre noticia</p>
+                                                <a href="#">Detalles</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="text_img">
+                                                <figure><img src="{% static 'images/pct.png' %}" alt="#" /></figure>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="container">
+                                <div class="carousel-caption">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="text-bg">
+                                                <span>Titulo noticia</span>
+                                                <p>Informacion sobre noticia</p>
+                                                <a href="#">Detalles</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="text_img">
+                                                <figure><img src="{% static 'images/pct.png' %}" alt="#" /></figure>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#banner1" role="button" data-slide="prev">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                </a>
+                <a class="carousel-control-next" href="#banner1" role="button" data-slide="next">
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </a>
+            </div>
+    </section>
+    {% endblock %} 

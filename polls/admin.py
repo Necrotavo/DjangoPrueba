@@ -22,5 +22,4 @@ admin.site.register(Estudiante, EstudianteAdmin)
 admin.site.register(TCUDato, TCUDatoAdmin)
 admin.site.register(Proyecto)
 admin.site.unregister(Group)
-
 admin.site.register(Noticia)
