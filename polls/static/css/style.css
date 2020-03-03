@@ -383,13 +383,13 @@ ul.btn li:last-child {
 .banner_main {
      background: url(../images/banner.jpg);
      background-repeat: no-repeat;
+     background-size: cover;
      min-height: 900px;
      background-attachment: fixed;
      display: flex;
      justify-content: center;
      align-content: center;
      align-items: center;
-     position: relative;
 }
 .banner_main::before {
      position: absolute;
